@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "lY2ixqYweyg=",
+  "success": true,
+  "projectFilePath": "C:\\Kuliah\\Tingkat 2\\Semester 4\\Stima\\final\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sihom\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\sihom\\.nuget\\packages\\system.drawing.common\\8.0.5\\system.drawing.common.8.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
