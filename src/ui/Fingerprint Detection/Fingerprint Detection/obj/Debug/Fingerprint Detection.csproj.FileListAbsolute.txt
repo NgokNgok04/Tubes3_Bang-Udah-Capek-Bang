@@ -1,0 +1,24 @@
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\Fingerprint Detection.exe.config
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\Fingerprint Detection.exe
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\Fingerprint Detection.pdb
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\Fingerprint Detection.csproj.AssemblyReference.cache
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\MainWindow.g.cs
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\App.g.cs
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\Fingerprint Detection_MarkupCompile.cache
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\Fingerprint Detection_MarkupCompile.lref
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\MainWindow.baml
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\Fingerprint Detection.g.resources
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\Fingerprint_Detection.Properties.Resources.resources
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\Fingerprint Detection.csproj.GenerateResource.cache
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\Fingerprint Detection.csproj.CoreCompileInputs.cache
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\Fingerprint Detection.exe
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\Fingerprint Detection.pdb
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\EntityFramework.dll
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\EntityFramework.SqlServer.dll
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Data.SQLite.dll
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\EntityFramework.xml
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\EntityFramework.SqlServer.xml
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Data.SQLite.xml
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\Fingerpr.E049F05E.Up2Date
