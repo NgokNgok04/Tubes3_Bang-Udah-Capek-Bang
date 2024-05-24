@@ -18,15 +18,8 @@ namespace Fingerprint_Detection
         public MainWindow()
         {
             InitializeComponent();
-            ImportSQLFile();
         }
 
-        public void ImportSQLFile()
-        {
-            DB_init dB_Init = new DB_init();
-            string sqlFilePath = @"..\..\..\..\..\database\tubes3_stima.sql";
-            dB_Init.ExecuteSqlFile(sqlFilePath);
-        }
         private void UploadButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
