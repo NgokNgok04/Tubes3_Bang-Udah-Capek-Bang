@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj": {}
+    "D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\BMPExample\\BMPExample.csproj": {}
   },
   "projects": {
-    "D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj": {
+    "D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\BMPExample\\BMPExample.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj",
-        "projectName": "f",
-        "projectPath": "D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj",
+        "projectUniqueName": "D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\BMPExample\\BMPExample.csproj",
+        "projectName": "BMPExample",
+        "projectPath": "D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\BMPExample\\BMPExample.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\obj\\",
+        "outputPath": "D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\BMPExample\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -48,12 +48,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "System.Drawing.Common": {
-              "target": "Package",
-              "version": "[8.0.5, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

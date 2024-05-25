@@ -1,0 +1,15 @@
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\bin\Debug\net8.0\BMPExample.exe
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\bin\Debug\net8.0\BMPExample.deps.json
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\bin\Debug\net8.0\BMPExample.runtimeconfig.json
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\bin\Debug\net8.0\BMPExample.dll
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\bin\Debug\net8.0\BMPExample.pdb
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\obj\Debug\net8.0\BMPExample.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\obj\Debug\net8.0\BMPExample.AssemblyInfoInputs.cache
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\obj\Debug\net8.0\BMPExample.AssemblyInfo.cs
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\obj\Debug\net8.0\BMPExample.csproj.CoreCompileInputs.cache
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\obj\Debug\net8.0\BMPExample.sourcelink.json
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\obj\Debug\net8.0\BMPExample.dll
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\obj\Debug\net8.0\refint\BMPExample.dll
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\obj\Debug\net8.0\BMPExample.pdb
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\obj\Debug\net8.0\BMPExample.genruntimeconfig.cache
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\BMPExample\obj\Debug\net8.0\ref\BMPExample.dll
