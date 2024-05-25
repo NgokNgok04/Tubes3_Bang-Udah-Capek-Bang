@@ -37,3 +37,14 @@ C:\Kuliah\Tingkat 2\Semester 4\Stima\final\Tubes3_Bang-Udah-Capek-Bang\obj\Debug
 C:\Kuliah\Tingkat 2\Semester 4\Stima\final\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\f.pdb
 C:\Kuliah\Tingkat 2\Semester 4\Stima\final\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\f.genruntimeconfig.cache
 C:\Kuliah\Tingkat 2\Semester 4\Stima\final\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\ref\f.dll
+C:\Users\agilf\Documents\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\f.csproj.AssemblyReference.cache
+C:\Users\agilf\Documents\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\f.src.ui.Fingerprint_Detection.Fingerprint_Detection.Properties.Resources.resources
+C:\Users\agilf\Documents\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\f.csproj.GenerateResource.cache
+C:\Users\agilf\Documents\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\f.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\agilf\Documents\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\f.AssemblyInfoInputs.cache
+C:\Users\agilf\Documents\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\f.AssemblyInfo.cs
+C:\Users\agilf\Documents\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\f.csproj.CoreCompileInputs.cache
+C:\Users\agilf\Documents\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\f.sourcelink.json
+C:\Users\agilf\Documents\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\f.dll
+C:\Users\agilf\Documents\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\refint\f.dll
+C:\Users\agilf\Documents\Tubes3_Bang-Udah-Capek-Bang\obj\Debug\net8.0\f.pdb

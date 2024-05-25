@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Kuliah\\Tingkat 2\\Semester 4\\Stima\\final\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj": {}
+    "C:\\Users\\agilf\\Documents\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj": {}
   },
   "projects": {
-    "C:\\Kuliah\\Tingkat 2\\Semester 4\\Stima\\final\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj": {
+    "C:\\Users\\agilf\\Documents\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Kuliah\\Tingkat 2\\Semester 4\\Stima\\final\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj",
+        "projectUniqueName": "C:\\Users\\agilf\\Documents\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj",
         "projectName": "f",
-        "projectPath": "C:\\Kuliah\\Tingkat 2\\Semester 4\\Stima\\final\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj",
-        "packagesPath": "C:\\Users\\sihom\\.nuget\\packages\\",
-        "outputPath": "C:\\Kuliah\\Tingkat 2\\Semester 4\\Stima\\final\\Tubes3_Bang-Udah-Capek-Bang\\obj\\",
+        "projectPath": "C:\\Users\\agilf\\Documents\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj",
+        "packagesPath": "C:\\Users\\agilf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\agilf\\Documents\\Tubes3_Bang-Udah-Capek-Bang\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sihom\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\agilf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
