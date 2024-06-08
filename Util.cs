@@ -39,108 +39,7 @@ class Util
         }
         return result;
     }
-    // static void bitmapToBinary()
-    // {
-    //     Console.WriteLine("Picture (text): ");
-    //     string imageText = Console.ReadLine();
-    //     Console.WriteLine("Picture (pattern): ");
-    //     string imagePattern = Console.ReadLine();
 
-    //     string selectedPattern = "";
-    //     // Console.WriteLine("Output: ");
-    //     // string outFile = Console.ReadLine();
-    //     try
-    //     {
-    //         // Load the image
-    //         using (Image image = Image.FromFile(imagePattern))
-    //         {
-    //             // image to binary
-    //             byte[,] imageBytes2d = ImageToByteArray(image);
-    //             imageBytes2d = twoDPattern(imageBytes2d, image.Width, image.Height);
-
-    //             using (StreamWriter writer = new StreamWriter("2dPattern.txt"))
-    //             {
-    //                 for (int y = 0; y < image.Height; y++)
-    //                 {
-    //                     for (int x = 0; x < (image.Width / 8) * 8; x++)
-    //                     {
-    //                         writer.Write(imageBytes2d[y, x]);
-    //                         // if (x < image.Width - 1)
-    //                         // {
-    //                         //     writer.Write(","); // Use a comma as a delimiter
-    //                         // }
-    //                     }
-    //                     writer.WriteLine(); // Move to the next line after each row
-    //                 }
-    //             }
-
-    //             // 2d to 1d
-    //             byte[] imageBytes1d = twoToOneCut(imageBytes2d, image.Width, image.Height);
-    //             using (StreamWriter writer = new StreamWriter("1dPattern.txt"))
-    //             {
-    //                 for (int y = 0; y < imageBytes1d.Length; y++)
-    //                 {
-    //                     writer.Write(imageBytes1d[y]); // Move to the next line after each row
-
-    //                 }
-    //             }
-
-    //             // binary to ascii 
-    //             string base64String = Convert.ToBase64String(imageBytes1d);
-    //             selectedPattern = base64String;
-    //             // write into file
-    //             File.WriteAllText("asciiPattern.txt", base64String);
-
-    //             Console.WriteLine($"Out: ");
-    //         }
-    //         using (Image image = Image.FromFile(imageText))
-    //         {
-    //             // image to binary
-    //             byte[,] imageBytes2d = ImageToByteArray(image);
-    //             // imageBytes2d = twoDPattern(imageBytes2d, image.Width, image.Height);
-
-    //             using (StreamWriter writer = new StreamWriter("2dText.txt"))
-    //             {
-    //                 for (int y = 0; y < image.Height; y++)
-    //                 {
-    //                     for (int x = 0; x < image.Width; x++)
-    //                     {
-    //                         writer.Write(imageBytes2d[y, x]);
-    //                         // if (x < image.Width - 1)
-    //                         // {
-    //                         //     writer.Write(","); // Use a comma as a delimiter
-    //                         // }
-    //                     }
-    //                     writer.WriteLine(); // Move to the next line after each row
-    //                 }
-    //             }
-
-    //             // 2d to 1d
-    //             byte[] imageBytes1d = twoToOne(imageBytes2d, image.Width, image.Height);
-    //             using (StreamWriter writer = new StreamWriter("1dText.txt"))
-    //             {
-    //                 for (int y = 0; y < imageBytes1d.Length; y++)
-    //                 {
-    //                     writer.Write(imageBytes1d[y]); // Move to the next line after each row
-
-    //                 }
-    //             }
-
-    //             // binary to ascii
-    //             string base64String = Convert.ToBase64String(imageBytes1d);
-
-    //             // write into file
-    //             File.WriteAllText("asciiText.txt", base64String);
-
-    //             Console.WriteLine($"Out: ");
-    //         }
-
-    //     }
-    //     catch (Exception ex) // handle error
-    //     {
-    //         Console.WriteLine($"Error: {ex.Message}");
-    //     }
-    // }
     static bool imageKMP(String imageText, String imagePattern)
     {
         string selectedPattern = "";
@@ -228,7 +127,6 @@ class Util
                 for (int i = 0; i < (image.Width % 8) + 1; i++)
                 {
                     String[] mtx = getText(imageBytes2d, i);
-                    // Console.WriteLine("masuk ke loop 2");
                     for (int j = 0; j < mtx.GetLength(0); j++)
                     {
                         Console.WriteLine("loop " + i + "-" + j);
@@ -239,9 +137,7 @@ class Util
                             return true;
                         }
                     }
-                    // Console.WriteLine("keluar ke loop 2");
                 }
-                // Console.WriteLine("selesai ke loop 1");
             }
             return false;
         }
@@ -288,11 +184,7 @@ class Util
     {
         String[] result = new string[mtx.Length];
         int w = 8 * (mtx.GetLength(1) / 8);
-        // Console.WriteLine("setelah definisi w");
         byte[] line = new byte[w / 8];
-        // Console.WriteLine("masuk loop getText()");
-        // Console.WriteLine(mtx.GetLength(0));
-        // Console.WriteLine(mtx.GetLength(1));
         for (int i = 0; i < mtx.GetLength(0); i++)
         {
             byte temp = 0;
@@ -303,21 +195,12 @@ class Util
                 if (j % 8 == 7)
                 {
                     line[j / 8] = temp;
-                    if (temp > 127)
-                    {
-                        line[j / 8] -= 127;
-                    }
                     temp = 0;
                 }
             }
-            // foreach (byte b in line)
-            // {
-            //     Console.WriteLine(b);
-            // }
             string s = System.Text.Encoding.Latin1.GetString(line);
             result[i] = s;
         }
-        // Console.WriteLine("selesai loop getText()");
         return result;
     }
     static byte[] twoToOne(byte[,] mtx, int w, int h) // function to convert image into binary
@@ -337,13 +220,6 @@ class Util
     {
         byte[] result = new byte[(w / 8) * 8];
 
-        // for (int y = 0; y < h; y++)
-        // {
-        //     for (int x = 0; x < (w / 8) * 8; x++)
-        //     {
-        //         result[y * (w / 8) * 8 + x] = mtx[y, x];
-        //     }
-        // }
         for (int x = 0; x < (w / 8) * 8; x++)
         {
             result[x] = mtx[(h / 2), x];
@@ -416,7 +292,6 @@ class Util
             {
                 occurrences.Add(i - j);
                 return true;
-                // return occurrences[0];
                 j = lps[j - 1];
             }
             else if (i < n && pattern[j] != text[i])
@@ -433,6 +308,23 @@ class Util
         }
         return false;
     }
+    public static string[] bitsToString2D(byte[,] mtx)
+    {
+        string[] result = new string[mtx.GetLength(0)];
+        int border = mtx.GetLength(0) - 30;
+        int up = border / 2;
+        for (int i = 0; i < 30; i++)
+        {
+            byte[] list = new byte[mtx.GetLength(1)];
+            for (int j = 0; j < mtx.GetLength(1); j++)
+            {
+                list[j] = mtx[i + up, j];
+            }
+            string s = bitsToString(list);
+            result[i] = s;
+        }
+        return result;
+    }
     public static string bitsToString(byte[] list)
     {
         byte[] line = new byte[list.GetLength(0) / 8];
@@ -445,13 +337,22 @@ class Util
             {
 
                 line[i / 8] = temp;
-                if (temp > 127)
-                {
-                    line[i / 8] -= 127;
-                }
+                // if (temp > 127)
+                // {
+                //     line[i / 8] -= 127;
+                // }
                 temp = 0;
             }
         }
-        return System.Text.Encoding.Latin1.GetString(line);
+
+        int border = line.GetLength(0) - 4;
+        int left = border / 2;
+
+        byte[] finalLine = new byte[4];
+        for (byte i = 0; i < 4; i++)
+        {
+            finalLine[i] = line[i + left];
+        }
+        return System.Text.Encoding.Latin1.GetString(finalLine);
     }
 }
