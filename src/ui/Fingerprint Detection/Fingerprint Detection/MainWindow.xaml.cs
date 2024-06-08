@@ -36,11 +36,6 @@ namespace Fingerprint_Detection
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
             isBM = !isBM;
@@ -59,6 +54,17 @@ namespace Fingerprint_Detection
             ButtonUpload.Visibility = Visibility.Hidden;
             TitleInput.Visibility = Visibility.Visible;
             TitleOutput.Visibility = Visibility.Visible;
+
+            bool found = false;
+            if (!found) {
+                ButtonOutput.Content = " No Fingerprint \n        match";
+                ButtonOutput.HorizontalContentAlignment = HorizontalAlignment.Center;
+            } else
+            {
+                MatchPercentage.Visibility = Visibility.Visible;
+                BiodataMatch.Visibility = Visibility.Visible;
+                TimeExecution.Visibility = Visibility.Visible;
+            }
         }
 
 

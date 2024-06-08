@@ -43,6 +43,7 @@ cursor.execute('''
         jenis_kelamin VARCHAR(6) CHECK (jenis_kelamin IN ('male', 'female')),
         golongan_darah VARCHAR(3) CHECK (golongan_darah IN ('A', 'B', 'AB', 'O')),
         alamat VARCHAR(255),
+        agama VARCHAR(100),
         status_perkawinan VARCHAR(13) CHECK (status_perkawinan IN ('Belum Menikah', 'Menikah', 'Cerai')),
         pekerjaan VARCHAR(100),
         kewarganegaraan VARCHAR(50),
@@ -62,6 +63,7 @@ blood_types = ['A', 'B', 'AB', 'O']
 countries = ["Indonesia", "China", "China", "Namibia", "Bolivia", "Greece", "Japan", "South Korea", "China", "Russia", "Japan", "China", "Belarus", "United Kingdom", "China", "Comoros", "Portugal", "Egypt", "Ukraine", "Poland", "Russia", "Brazil", "China", "China", "Nigeria", "Indonesia", "China", "Azerbaijan", "United States", "Portugal", "Ukraine", "Indonesia", "Russia", "Indonesia", "Russia", "Sweden", "Cambodia", "Venezuela", "Iran", "Bolivia"]
 genders = ['male', 'female']
 addresses = ["719 Beilfuss Plaza", "73762 Kenwood Pass", "67 Warrior Court", "403 East Terrace", "70938 Gateway Street", "25987 Katie Way", "740 Manufacturers Point", "8955 Steensland Place", "204 Comanche Park", "197 Grayhawk Way", "2 Summit Court", "62 John Wall Terrace", "5565 Green Street", "88777 Warbler Avenue", "3553 Maple Pass", "01 Main Hill", "04 Larry Court", "2287 Reinke Lane", "19 Merchant Way", "45 Talisman Center", "797 Dwight Trail", "996 Rowland Drive", "8714 Dahle Parkway", "8701 Lakewood Gardens Crossing", "28409 Spaight Pass", "5778 Amoth Plaza", "0 Walton Parkway", "8 Northland Center", "9 Barby Place", "89 Gerald Street", "08 Hanson Alley", "9253 Melvin Terrace", "4 Mifflin Place", "4779 Homewood Pass", "9221 High Crossing Drive", "2483 Charing Cross Place", "544 Karstens Road", "7997 Upham Plaza", "5951 Cottonwood Plaza", "39490 Service Park"]
+religions = ['Christian', 'Chatolic', 'Islam', 'Konghucu', 'Hindu', 'Buddha']
 
 # Insert transformed names and random data into biodata table
 for (name,) in distinct_names:
@@ -74,12 +76,13 @@ for (name,) in distinct_names:
     status_perkawinan = random.choice(statuses)
     pekerjaan = random.choice(jobs)
     kewarganegaraan = random.choice(countries)
+    agama = random.choice(religions)
     
     try:
         cursor.execute('''
-            INSERT INTO biodata (PK, nama, tempat_lahir, jenis_kelamin, golongan_darah, alamat, status_perkawinan, pekerjaan, kewarganegaraan)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ''', (pk, alay_name, tempat_lahir, jenis_kelamin, golongan_darah, alamat, status_perkawinan, pekerjaan, kewarganegaraan))
+            INSERT INTO biodata (PK, nama, tempat_lahir, jenis_kelamin, golongan_darah, alamat, agama, status_perkawinan, pekerjaan, kewarganegaraan)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (pk, alay_name, tempat_lahir, jenis_kelamin, golongan_darah, alamat, agama, status_perkawinan, pekerjaan, kewarganegaraan))
         
         print("Input success: ", alay_name)
     except sqlite3.Error as e:
