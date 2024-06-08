@@ -1,20 +1,17 @@
 using System;
 using System.Collections.Generic;
 
-class BM
-{
+class BM {
     protected static int NO_OF_CHARS = 256;
     protected static string[] LastOccurrence = new string[NO_OF_CHARS];
 
     protected static void Preprocess(string pattern) {
     // find the last occurrence of each character in the pattern
-        for (int i = 0; i < NO_OF_CHARS; i++)
-        {
+        for (int i = 0; i < NO_OF_CHARS; i++) {
             LastOccurrence[i] = "-1";
         }
 
-        for (int i = 0; i < pattern.Length; i++)
-        {
+        for (int i = 0; i < pattern.Length; i++) {
             LastOccurrence[pattern[i]] = i.ToString();
         }
     }
