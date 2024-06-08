@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-// [,]
+
 class KMP {
     private static void ComputeLPSArray(string pattern, int m, int[] lps) {
     // function to compute the longest proper prefix which is also suffix
