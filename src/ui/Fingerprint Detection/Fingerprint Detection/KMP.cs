@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 
 class KMP {
     private static void ComputeLPSArray(string pattern, int m, int[] lps) {
@@ -58,19 +59,22 @@ class KMP {
         return false;
     }
 
-    public static bool imageKMP_Algorithm(String imageText, String imagePattern) {
+    public static float imageKMP_Algorithm(String imageText, String imagePattern) {
     // function to search for pattern in text using Knuth-Morris-Pratt algorithm
     // text and pattern get from image
     // imageText is path to image text
     // imagePattern is path to image pattern
 
         string selectedPattern = "";
+        byte[][] l1;
+        byte[][] l2;
         try {
             /** *********************** Pattern *********************** **/
             // Load the image
             using (Image image = Image.FromFile(imagePattern)) {
                 // image to binary
                 byte[][] imageBytes2d = Util.ImageToByteArray(image);
+                l1 = imageBytes2d;
                 imageBytes2d = Util.twoDPattern(imageBytes2d, image.Width, image.Height);
 
                 using (StreamWriter writer = new StreamWriter("2dPattern.txt")) {
@@ -104,6 +108,7 @@ class KMP {
             using (Image image = Image.FromFile(imageText)) {
                 // image to binary
                 byte[][] imageBytes2d = Util.ImageToByteArray(image);
+                l2 = imageBytes2d;
 
                 using (StreamWriter writer = new StreamWriter("2dText.txt")) {
                     for (int y = 0; y < image.Height; y++) {
@@ -135,17 +140,17 @@ class KMP {
                     String[] mtx = Util.getText(imageBytes2d, i);
                     for (int j = 0; j < mtx.Length; j++) {
                         if (KMP_Algorithm(mtx[j], selectedPattern)) {
-                            return true;
+                            return 1;
                         }
                     }
                 }
             }
-            return false;
+            return HammingDistance.CalculateHammingDistance(l1, l2);
         }
 
         catch (Exception ex) { // handle error
             // Console.WriteLine($"Error: {ex.Message}");
-            return false;
+            return 0;
         }
     }
 }

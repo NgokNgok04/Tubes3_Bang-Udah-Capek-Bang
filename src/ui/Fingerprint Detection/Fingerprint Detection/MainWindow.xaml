@@ -10,8 +10,8 @@
         MaxHeight="800" 
         Height="800" 
         MinWidth="450" 
-        MaxWidth="450" 
-        Width="450"
+        MaxWidth="1000" 
+        Width="1000"
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
@@ -200,20 +200,29 @@
                 Background="Transparent"
                 BorderBrush="#707070"
                 Visibility="Hidden"
-                />
+         >
+            <Button.Content>
+                <Image
+                        Name="ButtonMatch"
+                        Source="assets/fingerprint.png" 
+                        Stretch="Uniform"
+                        Width="100"
+                     />
+            </Button.Content>
+        </Button>
 
         <Label x:Name="TimeExecution"
-               Visibility="Hidden" 
+               Visibility="Visible" 
                Content ="Time Execution: 1s"
-               FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="10"
-               Margin="10,476,320,300"
+               FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="6"
+               Margin="10,536,9,87"
                />
-        <Label x:Name="MatchPercentage"
-               Visibility="Hidden" 
+        <Label Name="MatchPercentage"
+               Visibility="Visible" 
                Content ="Match Percentage: 100%"
                HorizontalAlignment="Right"
-               FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="10"
-               Margin="310,476,10,300"
+               FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="6"
+               Margin="0,520,153,256" Width="837"
                />
         <Button
                 Margin="162,453,162,0" 

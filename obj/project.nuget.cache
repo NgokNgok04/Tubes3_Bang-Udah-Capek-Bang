@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "gieFinFQ1zcywgB8y6n39gTvpL6p+knVm+9oZk4nIBN0uUkZtjvouVblFJyU4wGEWJjI8Ah50ti99n7jx7CKhQ==",
+  "dgSpecHash": "vUi6LABKytU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\agilf\\Documents\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj",
+  "projectFilePath": "D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\f.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\agilf\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
-    "C:\\Users\\agilf\\.nuget\\packages\\system.drawing.common\\8.0.5\\system.drawing.common.8.0.5.nupkg.sha512"
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\system.drawing.common\\8.0.6\\system.drawing.common.8.0.6.nupkg.sha512"
   ],
   "logs": []
 }

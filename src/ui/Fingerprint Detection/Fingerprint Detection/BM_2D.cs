@@ -37,19 +37,22 @@ class BM_2D : BM {
         return false;
     }
 
-    public static bool imageBM_Algorithm(String imageText, String imagePattern) {
+    public static float imageBM_Algorithm(String imageText, String imagePattern) {
     // function to search for pattern in text using Knuth-Morris-Pratt algorithm
     // text and pattern get from image
     // imageText is path to image text
     // imagePattern is path to image pattern
 
         string[] selectedPattern = new string[30];
+        byte[][] l1;
+        byte[][] l2;
         try {
             /** *********************** Pattern *********************** **/
             // Load the image
             using (Image image = Image.FromFile(imagePattern)) {
                 // image to binary
                 byte[][] imageBytes2d = Util.ImageToByteArray(image);
+                l1 = imageBytes2d;
                 imageBytes2d = Util.twoDPattern(imageBytes2d, image.Width, image.Height);
 
                 // using (StreamWriter writer = new StreamWriter("2dPattern.txt")) {
@@ -63,7 +66,10 @@ class BM_2D : BM {
                 
                 // binary to ascii 
                 string[] base64String = Util.bitsToString2D(imageBytes2d);
-                selectedPattern = base64String;
+                for (int i = 0; i < 30; i++)
+                {
+                    selectedPattern[i] = base64String[i];
+                }
 
                 // write into file (testing)
                 // File.WriteAllText("asciiPattern.txt", selectedPattern);
@@ -74,6 +80,7 @@ class BM_2D : BM {
             using (Image image = Image.FromFile(imageText)) {
                 // image to binary
                 byte[][] imageBytes2d = Util.ImageToByteArray(image);
+                l2 = imageBytes2d;
 
                 // using (StreamWriter writer = new StreamWriter("2dText.txt")) {
                 //     for (int y = 0; y < image.Height; y++) {
@@ -89,16 +96,16 @@ class BM_2D : BM {
                 for (int i = 0; i < (image.Width % 8) + 1; i++) {
                     String[] mtx = Util.getText(imageBytes2d, i);
                     if (BoyerMoore2D(mtx, selectedPattern)) {
-                        return true;
+                        return 1;
                     }
                 }
             }
-            return false;
+            return HammingDistance.CalculateHammingDistance(l1, l2);
         }
 
         catch (Exception ex) { // handle error
-            // Console.WriteLine($"Error: {ex.Message}");
-            return false;
+            Console.WriteLine($"Error: {ex.Message}");
+            return 0;
         }
     }
 }
