@@ -32,6 +32,51 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="17">
+                            <ContentPresenter HorizontalAlignment="Left"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TransparentButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
 
     <Grid>
@@ -41,18 +86,19 @@
                 CornerRadius="8,8,8,8"
                 Name="Upload_Fingerprint">
         </Border>
-          <Border BorderBrush="Black" BorderThickness="1"/>
-        
-        
+        <Border BorderBrush="Black" BorderThickness="1"/>
+
         <Border Background="#36404e" Margin="10,78,10,300" CornerRadius="12,12,12,12">
             <Button 
-                Margin="95,46,95,0" 
+                Margin="95,12,95,0" 
                 VerticalAlignment="Top" 
                 Click="UploadButton_Click" 
                 Name="ButtonUpload"
                 Height="320"
                 Width="240"
                 Background="Transparent"
+                BorderBrush="#707070"
+                Style="{StaticResource TransparentButtonStyle}"
                 Visibility="Visible">
 
                 <Button.Content>
@@ -68,14 +114,45 @@
 
         </Border>
 
-        <Label x:Name="SubTitle"
-               Content="Insert Fingerprint"
-               Margin="80,81,80,677"
-               FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="24"
-               VerticalContentAlignment="Center" 
-               HorizontalContentAlignment="Center"
-               Visibility="Visible"
+        <Label x:Name="KMPLabel"
+               Visibility="Visible" 
+               Content ="KMP"
+               FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="18"
+               Margin="130,413,265,349"
                />
+
+        <Label x:Name="BMLabel"
+               Visibility="Visible" 
+               Content ="BM"
+               FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="18"
+               Margin="265,413,50,349"
+               />
+        <Border BorderThickness="1"
+                BorderBrush="#cdd8e5"
+                Margin="185,413,185,349"
+                CornerRadius="18"
+        >
+            
+            <Button Style="{StaticResource RoundedButtonStyle}" 
+                    Background="Transparent"
+                    BorderThickness="0px"
+                    Name="ToggleButton"
+                    Click="ToggleButton_Click"
+                    >
+                <Button.Content>
+                    <Button Height="32px" 
+                            Width="32px" 
+                            BorderThickness="0"
+                            Background="#fae333"
+                            Name="Toggle"
+                            Style="{StaticResource RoundedButtonStyle}"
+                            Margin="2,0,0,0"
+                     >
+                        
+                    </Button>
+                </Button.Content>
+            </Button>
+        </Border>
 
         <Label x:Name="TitleInput"
                Content="Inserted Fingerprint"
@@ -107,7 +184,8 @@
                 Name="ButtonInput"
                 Width="202"
                 Height="270" 
-                BorderBrush="Red"
+                Background="Transparent"
+                BorderBrush="#707070"
                 Visibility="Hidden"/>
 
         <Button Margin="230,135,18,0" 
@@ -116,7 +194,8 @@
                 Click="SearchButton_Click" 
                 Name="ButtonOutput"
                 Height="270"
-                BorderBrush="Red"
+                Background="Transparent"
+                BorderBrush="#707070"
                 Visibility="Hidden"
                 />
 

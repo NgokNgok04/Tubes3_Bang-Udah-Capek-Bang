@@ -15,6 +15,7 @@ namespace Fingerprint_Detection
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool isBM = true;
         public MainWindow()
         {
             InitializeComponent();
@@ -34,17 +35,28 @@ namespace Fingerprint_Detection
                 ButtonImage.Height = 320;
             }
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
+        private void ToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            isBM = !isBM;
+            if (isBM)
+            {
+                Toggle.Margin = new Thickness(44,0, 0, 0);
+            } else
+            {
+                Toggle.Margin = new Thickness(2,0,0,0);
+            }
+        }
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             ButtonOutput.Visibility = Visibility.Visible;
             ButtonInput.Visibility = Visibility.Visible;
             ButtonUpload.Visibility = Visibility.Hidden;
-            SubTitle.Visibility = Visibility.Hidden;
             TitleInput.Visibility = Visibility.Visible;
             TitleOutput.Visibility = Visibility.Visible;
         }
