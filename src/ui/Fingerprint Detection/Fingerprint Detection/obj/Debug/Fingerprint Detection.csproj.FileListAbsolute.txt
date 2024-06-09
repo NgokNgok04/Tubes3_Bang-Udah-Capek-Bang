@@ -22,8 +22,6 @@ D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Uda
 D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\EntityFramework.SqlServer.xml
 D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Data.SQLite.xml
 D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\Fingerpr.E049F05E.Up2Date
-D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\Fingerprint Detection.csproj.SuggestedBindingRedirects.cache
-D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\obj\Debug\Fingerprint Detection.exe.config
 D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Drawing.Common.dll
 D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Text.Encoding.CodePages.dll
 D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Memory.dll
@@ -33,3 +31,8 @@ D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Uda
 D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Drawing.Common.pdb
 D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Drawing.Common.xml
 D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Text.Encodings.Web.dll
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Buffers.xml
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Memory.xml
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Numerics.Vectors.xml
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Kuliah\Semester 4\Stima\Tubes 3 (Fingerprint Detection)\Tubes\Tubes3_Bang-Udah-Capek-Bang\src\ui\Fingerprint Detection\Fingerprint Detection\bin\Debug\System.Text.Encoding.CodePages.xml

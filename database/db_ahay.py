@@ -54,6 +54,7 @@ cursor.execute('''
 # Fetch distinct nama values from sidik_jari table
 cursor.execute('SELECT DISTINCT nama FROM sidik_jari')
 distinct_names = cursor.fetchall()
+print("PANJANG NAMAAAAAAAAAAAAAAAAAAAAA WOIII : ", len(distinct_names))
 
 # Prepare random data for other fields
 cities = ['Padang', 'Palembang', 'Medan', 'Bandar Lampung', 'Tanjung Pinang', 'Banda Aceh', 'Pangkal Pinang', 'Bandung', 'Yogyakarta', 'Makassar', 'Surabaya', 'Tebing Tinggi', 'Sabang', ' Langsa', 'Ambon', 'Pontianak', 'Jayapura', 'Metro', 'Padang Sidempuan', 'Sawahlunto', 'Tanjung Balai', 'Prabumulih', 'LubukLinggau', 'Sibolga', 'Sibolga', 'Palu', 'Palangkaraya', 'Kendari', ' Mojokerto', 'Pasuruan', 'Pematang Siantar', 'Denpasar', 'Malang',' Pekanbaru','Semarang','Serang']
@@ -84,7 +85,7 @@ for (name,) in distinct_names:
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (pk, alay_name, tempat_lahir, jenis_kelamin, golongan_darah, alamat, agama, status_perkawinan, pekerjaan, kewarganegaraan))
         
-        print("Input success: ", alay_name)
+        # print("Input success: ", alay_name)
     except sqlite3.Error as e:
         print(f"Error inserting {alay_name}: {e}")
 

@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
+using System.Drawing.Printing;
+using System.Security.Cryptography;
+using System.Security.Principal;
 
 class KMP {
     private static void ComputeLPSArray(string pattern, int m, int[] lps) {
-    // function to compute the longest proper prefix which is also suffix
+        // function to compute the longest proper prefix which is also suffix
         int length = 0;
         lps[0] = 0;
 
@@ -16,6 +18,7 @@ class KMP {
                 lps[i] = length;
                 i++;
             }
+
             else {
                 if (length != 0) {
                     length = lps[length - 1];
@@ -28,16 +31,14 @@ class KMP {
         }
     }
     public static bool KMP_Algorithm(string text, string pattern) {
-    // function to search for pattern in text using Knuth-Morris-Pratt algorithm
+        // function to search for pattern in text using Knuth-Morris-Pratt algorithm
         int m = pattern.Length;
         int n = text.Length;
-
         int[] lps = new int[m];
         ComputeLPSArray(pattern, m, lps);
 
         int i = 0; // index for text
         int j = 0; // index for pattern
-
         while (i < n) {
             if (pattern[j] == text[i]) {
                 i++;
@@ -59,15 +60,15 @@ class KMP {
         return false;
     }
 
-    public static float imageKMP_Algorithm(String imageText, String imagePattern) {
-    // function to search for pattern in text using Knuth-Morris-Pratt algorithm
-    // text and pattern get from image
-    // imageText is path to image text
-    // imagePattern is path to image pattern
-
-        string selectedPattern = "";
+    public static float imageKMP_Algorithm(string imageText, string imagePattern) {
+        // function to search for pattern in text using Knuth-Morris-Pratt algorithm
+        // text and pattern get from image
+        // imageText is path to image text
+        // imagePattern is path to image pattern
+        string[] selectedPattern = new string[30];
         byte[][] l1;
         byte[][] l2;
+    
         try {
             /** *********************** Pattern *********************** **/
             // Load the image
@@ -77,31 +78,14 @@ class KMP {
                 l1 = imageBytes2d;
                 imageBytes2d = Util.twoDPattern(imageBytes2d, image.Width, image.Height);
 
-                using (StreamWriter writer = new StreamWriter("2dPattern.txt")) {
-                    for (int y = 0; y < image.Height; y++) {
-                        for (int x = 0; x < (image.Width / 8) * 8; x++) {
-                            writer.Write(imageBytes2d[y][x]);
-                        }
-                        writer.WriteLine(); // Move to the next line after each row
-                    }
-                }
-
                 // get 1d pattern (take from middle of image)
                 byte[] imageBytes1d = Util.get1DPattern(imageBytes2d, image.Width, image.Height);
-                using (StreamWriter writer = new StreamWriter("1dPattern.txt")) {
-                    for (int y = 0; y < imageBytes1d.Length; y++) {
-                        writer.Write(imageBytes1d[y]); // Move to the next line after each row
-
-                    }
-                }
+                
                 // binary to ascii 
-
-                string base64String = Util.bitsToString(imageBytes1d);
-                selectedPattern = base64String;
-
-                // write into file (testing)
-                // File.WriteAllText("asciiPattern.txt", selectedPattern);
-                // Console.WriteLine("Selected Pattern: " + selectedPattern);
+                string[] base64String = Util.bitsToString2D(imageBytes2d, "KMP");
+                for (byte i = 0; i < 30; i++) {
+                    selectedPattern[i] = base64String[i];
+                }
             }
 
             /** *********************** Text *********************** **/
@@ -109,47 +93,48 @@ class KMP {
                 // image to binary
                 byte[][] imageBytes2d = Util.ImageToByteArray(image);
                 l2 = imageBytes2d;
-
-                using (StreamWriter writer = new StreamWriter("2dText.txt")) {
-                    for (int y = 0; y < image.Height; y++) {
-                        for (int x = 0; x < image.Width; x++) {
-                            writer.Write(imageBytes2d[y][x]);
-                        }
-                        writer.WriteLine(); // Move to the next line after each row
-                    }
-                }
-
+                Console.WriteLine("Persen%: " + HammingDistance.CalculateHammingDistance(l1, l2));
+                
                 // change 2d to 1d
                 byte[] imageBytes1d = Util.arrayOfStringToString(imageBytes2d, image.Width, image.Height);
-                using (StreamWriter writer = new StreamWriter("1dText.txt")) {
-                    for (int y = 0; y < imageBytes1d.Length; y++) {
-                        writer.Write(imageBytes1d[y]); // Move to the next line after each row
-                    }
-                }
-
-                // binary to ascii
-                string base64String = Convert.ToBase64String(imageBytes1d);
-
-                // write into file
-                // File.WriteAllText("asciiText.txt", base64String);
-                // Console.WriteLine(image.Width);
-                
                 /** *********************** KMP *********************** **/
                 // search for pattern in text
-                for (int i = 0; i < (image.Width % 8) + 1; i++) {
-                    String[] mtx = Util.getText(imageBytes2d, i);
-                    for (int j = 0; j < mtx.Length; j++) {
-                        if (KMP_Algorithm(mtx[j], selectedPattern)) {
-                            return 1;
+                for (int i = 0; i < (image.Width % 8) + 1; i++)
+                {
+                    String[] mtx = Util.getText(imageBytes2d, i, "KMP");
+                    int a = 0;
+                    int b = 0;
+                    bool notFound = true;
+                    while (a < mtx.Length - selectedPattern.Length + 1 && notFound)
+                    {
+                        while (b < selectedPattern.Length && notFound && a < mtx.Length - selectedPattern.Length + 1)
+                        {
+                            if (KMP_Algorithm(mtx[a + b], selectedPattern[b]))
+                            {
+                                b++;
+                            }
+                            else
+                            {
+                                b = 0;
+                                a++;
+                            }
+                        }
+                        
+                        if (b == selectedPattern.Length)
+                        {
+                            notFound = false;
+                            return 1.0f;
                         }
                     }
+                    // return !notFound;
                 }
             }
             return HammingDistance.CalculateHammingDistance(l1, l2);
-        }
 
-        catch (Exception ex) { // handle error
-            // Console.WriteLine($"Error: {ex.Message}");
+        }
+        catch (Exception ex)
+        { // handle error
+            Console.WriteLine($"Error: {ex.Message}");
             return 0;
         }
     }

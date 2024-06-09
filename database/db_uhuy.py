@@ -27,11 +27,10 @@ except sqlite3.Error as err:
 fake = Faker('id_ID')  # 'id_ID' locale for Indonesian data
 
 # Directory containing BMP images
-image_directory = './fingerprint'
+image_directory = '../test/'
 
 # Function to get base name (name before underscore)
-def get_base_name(filename):
-    return filename.split('_', 1)[0]
+
 
 # Function to read images from directory
 def read_images_from_directory(directory):
@@ -60,16 +59,12 @@ def generate_fake_sidik_jari():
     # Dictionary to store name based on number prefix
     number_prefix_names = {}
 
+    counter = 0
+    
+    person_name = generate_random_name()
     for filename in image_files:
-        base_name = get_base_name(filename)
-        number_prefix = base_name.split('__', 1)[0]  # Get the number prefix
-        person_name = number_prefix_names.get(number_prefix)
-
-        if not person_name:
+        if (counter % 10 == 0):
             person_name = generate_random_name()
-            number_prefix_names[number_prefix] = person_name
-
-        image_path = os.path.join(image_directory, filename)
 
         data = {
             'nama': person_name,
@@ -80,11 +75,12 @@ def generate_fake_sidik_jari():
             INSERT INTO sidik_jari (nama, berkas_citra)
             VALUES (:nama, :berkas_citra)
         """
+        counter+=1
 
         try:
             cursor.execute(insert_query, data)
             conn.commit()
-            print(f"Inserted fake sidik_jari data for {filename} successfully.")
+            # print(f"Inserted fake sidik_jari data for {filename} successfully.")
         except sqlite3.Error as err:
             print(f"Error inserting data for {filename}: {err}")
 

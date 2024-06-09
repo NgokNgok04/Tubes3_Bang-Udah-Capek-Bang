@@ -54,8 +54,7 @@ public class Regex {
 
     public static bool IsMatch(string input, string pattern) {
     // function to check if input matches pattern
-        string regexPattern = StringToRegex_TrueToAlay(pattern);
-        return System.Text.RegularExpressions.Regex.IsMatch(input, regexPattern);
+        return System.Text.RegularExpressions.Regex.IsMatch(input, pattern);
     }
 
     public static List<string> FindMatches(string input, string pattern) {

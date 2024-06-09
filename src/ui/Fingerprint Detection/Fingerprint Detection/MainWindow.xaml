@@ -10,8 +10,8 @@
         MaxHeight="800" 
         Height="800" 
         MinWidth="450" 
-        MaxWidth="1000" 
-        Width="1000"
+        MaxWidth="450" 
+        Width="450"
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
@@ -187,7 +187,17 @@
                 Style="{StaticResource TransparentButtonStyle}"
                 Background="Transparent"
                 BorderBrush="#707070"
-                Visibility="Hidden"/>
+                Visibility="Hidden">
+            <Button.Content>
+                <Image
+                        Name="ButtonInserted"
+                        Source="assets/fingerprint.png" 
+                        Stretch="Uniform"
+                        HorizontalAlignment="Center"
+                        Width="202"
+                     />
+            </Button.Content>
+        </Button>
 
         <Button Margin="230,135,18,0" 
                 VerticalAlignment="Top" 
@@ -206,23 +216,24 @@
                         Name="ButtonMatch"
                         Source="assets/fingerprint.png" 
                         Stretch="Uniform"
-                        Width="100"
+                        HorizontalAlignment="Center"
+                        Width="202"
                      />
             </Button.Content>
         </Button>
 
         <Label x:Name="TimeExecution"
-               Visibility="Visible" 
+               Visibility="Hidden" 
                Content ="Time Execution: 1s"
-               FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="6"
-               Margin="10,536,9,87"
+               FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="10"
+               Margin="14,472,288,303"
                />
         <Label Name="MatchPercentage"
-               Visibility="Visible" 
+               Visibility="Hidden" 
                Content ="Match Percentage: 100%"
                HorizontalAlignment="Right"
-               FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="6"
-               Margin="0,520,153,256" Width="837"
+               FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="10"
+               Margin="0,469,10,307" Width="133"
                />
         <Button
                 Margin="162,453,162,0" 
@@ -245,16 +256,16 @@
                 >
             <StackPanel Margin="10,10,10,10">
                 <TextBlock Text="Biodata" FontFamily="Segoe UI Black" Foreground="#fae333" FontSize="20" HorizontalAlignment="Center"/>
-                <TextBlock Text="NIK               : 124567890987654" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
-                <TextBlock Text="Name           : Matthew Vladimir Hutabarat" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
-                <TextBlock Text="DOB              : Medan" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
-                <TextBlock Text="Gender         : Male" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
-                <TextBlock Text="Blood Type : B" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
-                <TextBlock Text="Address       : 39490 Service Park" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
-                <TextBlock Text="Religion       : Christian" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
-                <TextBlock Text="Status          : Married" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
-                <TextBlock Text="Job               : Cat Satisfty Expert" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
-                <TextBlock Text="Citizen         : Indonesia" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
+                <TextBlock Name = "NIK" Text="NIK               : 124567890987654" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
+                <TextBlock Name = "Name" Text="Name           : Matthew Vladimir Hutabarat" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
+                <TextBlock Name = "DOB" Text="DOB              : Medan" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
+                <TextBlock Name = "Gender" Text="Gender         : Male" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
+                <TextBlock Name = "BloodType" Text="Blood Type : B" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
+                <TextBlock Name = "Address" Text="Address       : 39490 Service Park" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
+                <TextBlock Name = "Religion" Text="Religion       : Christian" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
+                <TextBlock Name = "Status" Text="Status          : Married" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
+                <TextBlock Name = "Job" Text="Job               : Cat Satisfty Expert" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
+                <TextBlock Name = "Citizen" Text="Citizen         : Indonesia" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
             </StackPanel>
 
         </Border>

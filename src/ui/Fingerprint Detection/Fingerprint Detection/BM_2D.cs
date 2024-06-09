@@ -55,25 +55,11 @@ class BM_2D : BM {
                 l1 = imageBytes2d;
                 imageBytes2d = Util.twoDPattern(imageBytes2d, image.Width, image.Height);
 
-                // using (StreamWriter writer = new StreamWriter("2dPattern.txt")) {
-                //     for (int y = 0; y < image.Height; y++) {
-                //         for (int x = 0; x < (image.Width / 8) * 8; x++) {
-                //             writer.Write(imageBytes2d[y][x]);
-                //         }
-                //         writer.WriteLine(); // Move to the next line after each row
-                //     }
-                // }
-                
                 // binary to ascii 
-                string[] base64String = Util.bitsToString2D(imageBytes2d);
-                for (int i = 0; i < 30; i++)
-                {
+                string[] base64String = Util.bitsToString2D(imageBytes2d, "BM");
+                for (int i = 0; i < 30; i++) {
                     selectedPattern[i] = base64String[i];
                 }
-
-                // write into file (testing)
-                // File.WriteAllText("asciiPattern.txt", selectedPattern);
-                // Console.WriteLine("Selected Pattern: " + selectedPattern);
             }
 
             /** *********************** Text *********************** **/
@@ -82,19 +68,10 @@ class BM_2D : BM {
                 byte[][] imageBytes2d = Util.ImageToByteArray(image);
                 l2 = imageBytes2d;
 
-                // using (StreamWriter writer = new StreamWriter("2dText.txt")) {
-                //     for (int y = 0; y < image.Height; y++) {
-                //         for (int x = 0; x < image.Width; x++) {
-                //             writer.Write(imageBytes2d[y][x]);
-                //         }
-                //         writer.WriteLine(); // Move to the next line after each row
-                //     }
-                // }
-                                
-                /** *********************** KMP *********************** **/
+                /** *********************** BM *********************** **/
                 // search for pattern in text
                 for (int i = 0; i < (image.Width % 8) + 1; i++) {
-                    String[] mtx = Util.getText(imageBytes2d, i);
+                    String[] mtx = Util.getText(imageBytes2d, i, "BM");
                     if (BoyerMoore2D(mtx, selectedPattern)) {
                         return 1;
                     }

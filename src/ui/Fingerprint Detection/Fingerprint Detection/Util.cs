@@ -47,7 +47,7 @@ class Util {
         return binaryPixels;
     }
 
-    public static String[] getText(byte[][] mtx, int idx) {
+    public static String[] getText(byte[][] mtx, int idx, string algoritma) {
     // function to binary text into ASCII
         int width = 8 * (mtx[0].Length / 8);
         String[] result = new string[mtx.Length];
@@ -63,7 +63,14 @@ class Util {
                     temp = 0;
                 }
             }
-            string s = System.Text.Encoding.Latin1.GetString(line);
+
+            string s;
+            if (algoritma == "KMP") {
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                s = System.Text.Encoding.GetEncoding("Windows-1252").GetString(line);
+            } else {
+                s = System.Text.Encoding.ASCII.GetString(line);
+            }
             result[i] = s;
         }
         return result;
@@ -92,7 +99,7 @@ class Util {
         return result;
     }
 
-    public static string[] bitsToString2D(byte[][] mtx) {
+    public static string[] bitsToString2D(byte[][] mtx, string algoritma) {
     // get the middle 30*32 matrix of binary
     // the convert it to array of string
         string[] result = new string[mtx.Length];
@@ -106,13 +113,18 @@ class Util {
                 list[j] = mtx[i + up][j];
             }
 
-            string s = bitsToString(list);
+            string s;
+            if (algoritma == "KMP") {
+                s = bitsToString(list, "KMP");
+            } else {
+                s = bitsToString(list, "BM");
+            }
             result[i] = s;
         }
         return result;
     }
 
-    public static string bitsToString(byte[] list) {
+    public static string bitsToString(byte[] list, string algoritma) {
     // convert binary to string
     // then cut the middle 4 bytes
         byte[] line = new byte[list.Length / 8];
@@ -133,6 +145,14 @@ class Util {
         for (byte i = 0; i < 4; i++) {
             finalLine[i] = line[i + left];
         }
-        return System.Text.Encoding.Latin1.GetString(finalLine);
+
+        string s;
+        if (algoritma == "KMP") {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            s = System.Text.Encoding.GetEncoding("Windows-1252").GetString(line);
+        } else {
+            s = System.Text.Encoding.ASCII.GetString(line);
+        }
+        return s;
     }
 }
