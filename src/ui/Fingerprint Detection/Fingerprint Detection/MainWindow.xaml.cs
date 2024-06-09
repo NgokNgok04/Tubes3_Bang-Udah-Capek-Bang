@@ -158,6 +158,8 @@ namespace Fingerprint_Detection
             
             if (maxPercentage != 1 && maxPercentage >= 0.9f) {
 
+                ButtonOutput.Content = String.Empty;
+                ButtonOutput.Visibility = Visibility.Hidden;
                 BitmapImage bitmapmatch = new BitmapImage(new Uri(maxPath));
                 ButtonMatch.Source = bitmapmatch;
                 Console.WriteLine("MASUUKKKK SINI");
