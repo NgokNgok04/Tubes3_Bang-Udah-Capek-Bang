@@ -160,7 +160,7 @@ namespace Fingerprint_Detection
 
                 BitmapImage bitmapmatch = new BitmapImage(new Uri(maxPath));
                 ButtonMatch.Source = bitmapmatch;
-
+                Console.WriteLine("MASUUKKKK SINI");
                 String matchPath = maxPath.Substring(maxPath.Length - 19);
 
                 String nameMatch = FindMatchPathFromDatabase(matchPath);
