@@ -254,11 +254,12 @@
                 CornerRadius="12,12,12,12"
                 BorderThickness="0"
                 >
-            <StackPanel Margin="10,10,10,10">
+            <StackPanel Margin="10,0,10,-8">
                 <TextBlock Text="Biodata" FontFamily="Segoe UI Black" Foreground="#fae333" FontSize="20" HorizontalAlignment="Center"/>
                 <TextBlock Name = "NIK" Text="NIK               : 124567890987654" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
                 <TextBlock Name = "Name" Text="Name           : Matthew Vladimir Hutabarat" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
-                <TextBlock Name = "DOB" Text="DOB              : Medan" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
+                <TextBlock Name = "DOB" Text="DOB              : 16/04/2004" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
+                <TextBlock Name = "POB" Text="POB              : Medan" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
                 <TextBlock Name = "Gender" Text="Gender         : Male" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
                 <TextBlock Name = "BloodType" Text="Blood Type : B" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>
                 <TextBlock Name = "Address" Text="Address       : 39490 Service Park" FontFamily="Segoe UI Black" Foreground="#e9f3fd" FontSize="16"/>

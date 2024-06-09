@@ -26,15 +26,14 @@ namespace Fingerprint_Detection
         {
             InitializeComponent();
             imagePaths = GetAllImagePaths();
-            Console.WriteLine(imagePaths.Length);
 
         }
 
         private string[] GetAllImagePaths()
         {
-            string folderPath = "D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\test\\";
-            Console.WriteLine("WOIIIIIIIIIIII");
-            var imagePathss = Directory.GetFiles(folderPath).ToArray();
+            string folderPath = "../../../../../../test";
+            string absolutePath = Path.GetFullPath(folderPath);
+            var imagePathss = Directory.GetFiles(absolutePath).ToArray();
             return imagePathss;
         }
         private void UploadButton_Click(object sender, RoutedEventArgs e)
@@ -71,7 +70,7 @@ namespace Fingerprint_Detection
         {
             BitmapImage bitmapinserted = new BitmapImage(new Uri(imagePathToMatch));
             ButtonInserted.Source = bitmapinserted;
-
+            BiodataMatch.Visibility = Visibility.Hidden;
             ButtonOutput.Visibility = Visibility.Visible;
             ButtonInput.Visibility = Visibility.Visible;
             ButtonUpload.Visibility = Visibility.Hidden;
@@ -86,17 +85,15 @@ namespace Fingerprint_Detection
             stopwatch.Start();
             for (int i = 0; i < imagePaths.Length; i++)
             {
-                Console.WriteLine("TESTTTTTTTTT");
+                Console.WriteLine(i +") "+ imagePaths[i]);
                 if (isBM)
                 {
                     found = BM_2D.imageBM_Algorithm(imagePaths[i], imagePathToMatch);
                 } else
                 {
-                    // found = 1;
                     found = KMP.imageKMP_Algorithm(imagePaths[i], imagePathToMatch);
                 }
                 
-                Console.WriteLine(i + ") " + imagePaths[i]);
                 
                 if (found == 1)
                 {
@@ -105,20 +102,17 @@ namespace Fingerprint_Detection
                     maxPercentage = found;
                     MatchPercentage.Visibility = Visibility.Visible;
                     MatchPercentage.Content = "Match Percentage: " + maxPercentage*100 +"%";
-                    Console.WriteLine(maxPercentage.ToString());
                     TimeExecution.Visibility = Visibility.Visible;
                     
                     String matchPath = imagePaths[i].Substring(imagePaths[i].Length - 19);
-                    Console.WriteLine($"{matchPath}");
 
                     String nameMatch = FindMatchPathFromDatabase(matchPath);
 
                     String[,] biodata = ExtractAllNameFromDatabase();
                     nameMatch = Regex.StringToRegex_TrueToAlay(nameMatch);
-                    bool foundDB = false;
+                    bool foundDB;
                     for (int j = 0; j < biodata.GetLength(0); j++)
                     {
-                        // Console.WriteLine(j + " )    " + biodata[j,0].ToString());
                         foundDB = Regex.IsMatch(biodata[j, 1], nameMatch);
                         if (foundDB)
                         {
@@ -126,16 +120,17 @@ namespace Fingerprint_Detection
                             NIK.Text = "NIK               : " + biodata[j,0];
                             Name.Text = "Name           : " + biodata[j, 1];
                             DOB.Text = "DOB              : " + biodata[j, 2];
-                            Gender.Text = "Gender         : " + biodata[j, 3];
-                            BloodType.Text = "Blood Type : " +biodata[j, 4];
-                            Address.Text = "Address       : " +biodata[j, 5];
-                            Religion.Text = "Religion       : "+biodata[j, 6];
-                            Status.Text = "Status          : "+biodata[j, 7];
-                            Job.Text = "Job               : "+biodata[j, 8];
-                            Citizen.Text = "Citizen         : " +biodata[j, 9];
+                            POB.Text = "POB           : " + biodata[j, 3];
+                            Gender.Text = "Gender         : " + biodata[j, 4];
+                            BloodType.Text = "Blood Type : " +biodata[j, 5];
+                            Address.Text = "Address       : " +biodata[j, 6];
+                            Religion.Text = "Religion       : "+biodata[j, 7];
+                            Status.Text = "Status          : "+biodata[j, 8];
+                            Job.Text = "Job               : "+biodata[j, 9];
+                            Citizen.Text = "Citizen         : " +biodata[j, 10];
+                            break;
                         }
                     }
-                    Console.WriteLine(nameMatch);
 
 
 
@@ -148,20 +143,56 @@ namespace Fingerprint_Detection
                 {
                     if (found > maxPercentage)
                     {
-                       
                         maxPercentage = found;
                         maxPath = imagePaths[i];
+                    }
+
+                    if (i == imagePaths.Length - 1)
+                    {
+                        TimeSpan ts = stopwatch.Elapsed;
+                        long timewaste = (ts.Minutes * 60000) + (ts.Seconds * 1000) + ts.Milliseconds;
+                        TimeExecution.Content = "Time Execution: " + timewaste + "ms";
                     }
                 }
             }
             
             if (maxPercentage != 1 && maxPercentage >= 0.9f) {
+
                 BitmapImage bitmapmatch = new BitmapImage(new Uri(maxPath));
                 ButtonMatch.Source = bitmapmatch;
-                MatchPercentage.Visibility = Visibility.Visible;
-                MatchPercentage.Content = "Match Percentage: " + maxPercentage*100 +"%";
 
-                TimeExecution.Content = imagePathToMatch;
+                String matchPath = maxPath.Substring(maxPath.Length - 19);
+
+                String nameMatch = FindMatchPathFromDatabase(matchPath);
+                String[,] biodata = ExtractAllNameFromDatabase();
+                nameMatch = Regex.StringToRegex_TrueToAlay(nameMatch);
+
+                bool foundDB;
+                for (int j = 0; j < biodata.GetLength(0); j++)
+                {
+                    foundDB = Regex.IsMatch(biodata[j, 1], nameMatch);
+                    if (foundDB)
+                    {
+                        BiodataMatch.Visibility = Visibility.Visible;
+                        NIK.Text = "NIK               : " + biodata[j, 0];
+                        Name.Text = "Name           : " + biodata[j, 1];
+                        DOB.Text = "DOB              : " + biodata[j, 2];
+                        POB.Text = "POB           : " + biodata[j, 3];
+                        Gender.Text = "Gender         : " + biodata[j, 4];
+                        BloodType.Text = "Blood Type : " + biodata[j, 5];
+                        Address.Text = "Address       : " + biodata[j, 6];
+                        Religion.Text = "Religion       : " + biodata[j, 7];
+                        Status.Text = "Status          : " + biodata[j, 8];
+                        Job.Text = "Job               : " + biodata[j, 9];
+                        Citizen.Text = "Citizen         : " + biodata[j, 10];
+                        break;
+                    }
+                }
+
+                MatchPercentage.Visibility = Visibility.Visible;
+                TimeExecution.Visibility = Visibility.Visible;
+                MatchPercentage.Content = "Match Percentage: " + maxPercentage*100 +"%";
+                BiodataMatch.Visibility = Visibility.Visible;
             } 
             else if (maxPercentage < 0.9f)
             {
@@ -175,7 +206,9 @@ namespace Fingerprint_Detection
 
         private String FindMatchPathFromDatabase(String input)
         {
-            string connectionString = "Data Source=D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\database\\test.db;Version=3;";
+            string folderPath = "../../../../../../database/test.db";
+            string absolutePath = Path.GetFullPath(folderPath);
+            string connectionString = "Data Source="+absolutePath+  ";Version=3;";
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 try
@@ -199,7 +232,6 @@ namespace Fingerprint_Detection
                             {
                                 // Get the value of the "nama" column
                                 string nama = reader["nama"].ToString();
-                                Console.WriteLine(nama);
                                 return nama;
                             }
                         }
@@ -215,7 +247,9 @@ namespace Fingerprint_Detection
 
         private String[,] ExtractAllNameFromDatabase()
         {
-            string connectionString = "Data Source=D:\\Kuliah\\Semester 4\\Stima\\Tubes 3 (Fingerprint Detection)\\Tubes\\Tubes3_Bang-Udah-Capek-Bang\\database\\test.db;Version=3;";
+            string folderPath = "../../../../../../database/test.db";
+            string absolutePath = Path.GetFullPath(folderPath);
+            string connectionString = "Data Source=" + absolutePath + ";Version=3;";
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 try
@@ -230,11 +264,10 @@ namespace Fingerprint_Detection
                         rowCount = Convert.ToInt32(countCommand.ExecuteScalar());
                     }
 
-                    Console.WriteLine("ROWWWWWWWWWWWWWWWWW: " + rowCount);
 
 
                     // Initialize the matrix
-                    string[,] dataMatrix = new string[rowCount, 10];
+                    string[,] dataMatrix = new string[rowCount, 11];
                     int row = 0;
 
                     string query = "SELECT * FROM biodata";
@@ -244,7 +277,7 @@ namespace Fingerprint_Detection
                         {
                             while (reader.Read())
                             {
-                                for (int col = 0; col < 10; col++)
+                                for (int col = 0; col < 11; col++)
                                 {
                                     dataMatrix[row, col] = reader[col].ToString();
                                 }
@@ -252,7 +285,6 @@ namespace Fingerprint_Detection
                             }
                         }
                     }
-                    Console.WriteLine("TERAKHIRRRRRRRRRRRRRRRRR: "+  dataMatrix.GetLength(0));
                     return dataMatrix;
                 }
                 catch (Exception ex)
