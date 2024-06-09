@@ -2,4 +2,3 @@ src/ui/Fingerprint Detection/packages
 src/ui/Fingerprint Detection/.vs
 database/Fingerprint
 database/venv
-test
